@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Luas Segitiga</title>
+
+    <style>
+      body{font-family: arial,sans-serif</title>; background-color: #f4f4f4;margin: 0;padding: 20px;
+
+      }
+      .container{max-width: 400px;margin: auto;padding: 20px;background: white;border-radius: 8px;box-shadow:0 0 10px rgba(0, 0, 0, 1);
+
+      }
+      h1{text-align: center; 
+
+      }
+      label{display:block;margin: 10px 0 5px;
+
+      }
+      input{width: 100%;padding: 8px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;
+
+      }
+      button{width: 100%;padding: 10px;background-color: #ab1157;color: white;border: none;border-radius: 4px;cursor: pointer;
+
+      }
+      button:hover{background-color: #25782e;
+
+      }
+      #result{text-align: center;margin-top: 20px;font-size: 1.5em;
+
+      }
+    </style>
+    <script>
+        function hitungLuas() {
+            
+            var alas = parseFloat(document.getElementById("alas").value);
+            var tinggi = parseFloat(document.getElementById("tinggi").value);
+            
+            if (isNaN(alas) || isNaN(tinggi) || alas <= 0 || tinggi <= 0) {
+                alert("Masukkan nilai yang valid dan lebih besar dari 0 untuk alas dan tinggi.");
+                return;
+            }
+            
+            var luas = 0.5 * alas * tinggi;
+            
+            document.getElementById("hasilLuas").innerHTML = "Luas Segitiga: " + luas + " cm²";
+        }
+    </script>
+</head>
+<body>
+    <h1>Hitung Luas Segitiga</h1>
+    
+    <label for="alas">Alas (a):</label>
+    <input type="number" id="alas" placeholder="Masukkan panjang alas" required><br><br>
+
+    <label for="tinggi">Tinggi (t):</label>
+    <input type="number" id="tinggi" placeholder="Masukkan tinggi segitiga" required><br><br>
+
+    <button onclick="hitungLuas()">Hitung Luas</button>
+
+    <h2 id="hasilLuas"></h2>
+</body>
+</html>
